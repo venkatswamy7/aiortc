@@ -902,7 +902,7 @@ class RTCPeerConnection(AsyncIOEventEmitter):
                 # configure sctp
                 if media.profile == "DTLS/SCTP":
                     self._sctpLegacySdp = True
-                    self.__sctpRemotePort = int(media.fmt[0])
+                    self.__sctpRemotePort = media.sctp_port
                 else:
                     self._sctpLegacySdp = False
                     self.__sctpRemotePort = media.sctp_port
